@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thiago Nabuco — Estrategista de Comunicação</title>
+  <title>Thiago Nabuco · Estrategista de Comunicação</title>
+  <meta name="description" content="Portfólio de Thiago Nabuco, estrategista de comunicação com 16 anos de experiência em planejamento, social listening e estratégia de conteúdo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thiago Nabuco · Estrategista de Comunicação" />
+  <meta property="og:description" content="Portfólio de Thiago Nabuco, estrategista de comunicação com 16 anos de experiência em planejamento, social listening e estratégia de conteúdo." />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta name="twitter:card" content="summary" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -31,6 +39,12 @@
       overflow-x: hidden;
     }
 
+    :focus-visible {
+      outline: 2px solid var(--purple);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
     /* ─── NAV ─────────────────────────────────────────── */
     nav {
       position: fixed;
@@ -47,6 +61,8 @@
       transition: background 0.3s;
     }
 
+    nav :focus-visible { outline-color: var(--purple-light); }
+
     .nav-logo {
       font-family: 'Syne', sans-serif;
       font-size: 13px;
@@ -54,6 +70,12 @@
       color: var(--purple-light);
       letter-spacing: 0.04em;
       text-decoration: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
     }
 
     .nav-links {
@@ -72,6 +94,36 @@
     }
 
     .nav-links a:hover { color: var(--purple-light); }
+
+    /* Language switcher */
+    .lang-switch {
+      display: flex;
+      gap: 2px;
+      padding: 2px;
+      border: 0.5px solid rgba(174,169,236,0.35);
+      border-radius: 100px;
+    }
+
+    .lang-btn {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--purple-mid);
+      background: transparent;
+      border: none;
+      border-radius: 100px;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--purple-light); }
+
+    .lang-btn[aria-pressed="true"] {
+      background: var(--purple-dark);
+      color: var(--purple-light);
+    }
 
     /* ─── HERO ────────────────────────────────────────── */
     .hero {
@@ -306,24 +358,34 @@
 
     .case-card:last-child { border-bottom: none; }
 
+    .case-heading { font: inherit; }
+
     .case-trigger {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
+      width: 100%;
       padding: 32px 36px;
       cursor: pointer;
       background: var(--white);
+      border: none;
+      text-align: left;
+      font: inherit;
+      color: inherit;
       transition: background 0.18s;
       user-select: none;
     }
 
+    .case-trigger:focus-visible { outline-offset: -3px; }
+
     .case-trigger:hover { background: #FAFAFE; }
     .case-card.open .case-trigger { background: #FAFAFE; }
 
-    .case-left {}
+    .case-left { display: block; }
 
     .case-client {
+      display: block;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.18em;
@@ -333,6 +395,7 @@
     }
 
     .case-name {
+      display: block;
       font-family: 'Syne', sans-serif;
       font-size: 18px;
       font-weight: 700;
@@ -342,6 +405,7 @@
     }
 
     .case-period {
+      display: block;
       font-size: 11.5px;
       color: var(--muted);
     }
@@ -374,6 +438,8 @@
       background: #FAFAFE;
     }
 
+    .case-card.open .case-body { display: block; }
+
     .case-body-inner {
       padding-top: 28px;
       border-top: 0.5px solid var(--border);
@@ -395,6 +461,46 @@
       font-size: 14px;
       line-height: 1.75;
       color: var(--body-color);
+    }
+
+    .case-phase + .case-phase { margin-top: 20px; }
+
+    .case-phase-lbl {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--purple-deep);
+      margin-bottom: 4px;
+    }
+
+    .case-numbers { grid-column: 1 / -1; }
+
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .case-metric {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .case-metric-num {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--purple);
+      margin-bottom: 4px;
+    }
+
+    .case-metric-lbl {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.45;
     }
 
     /* ─── HABILIDADES ─────────────────────────────────── */
@@ -518,6 +624,16 @@
       color: var(--muted);
       margin-top: 2px;
     }
+
+    .rec-note {
+      font-size: 10.5px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 8px;
+      opacity: 0.85;
+    }
+
+    .rec-note:empty { display: none; }
 
     /* ─── O QUE BUSCO ─────────────────────────────────── */
     .busco-section {
@@ -651,6 +767,12 @@
     .reveal-delay-2 { transition-delay: 0.16s; }
     .reveal-delay-3 { transition-delay: 0.24s; }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .case-ico, .case-trigger, nav { transition: none; }
+    }
+
     /* ─── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 760px) {
       nav { padding: 0 20px; }
@@ -692,6 +814,10 @@
 
       .cases-header { flex-direction: column; gap: 12px; }
     }
+
+    @media (max-width: 520px) {
+      .case-metrics { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -699,29 +825,36 @@
   <!-- NAV -->
   <nav>
     <a href="#topo" class="nav-logo">TN</a>
-    <ul class="nav-links">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#cases">Trabalhos</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#cases" data-i18n="nav.work">Trabalhos</a></li>
+        <li><a href="#habilidades" data-i18n="nav.skills">Habilidades</a></li>
+        <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+      </ul>
+      <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="lang.aria">
+        <button type="button" class="lang-btn" data-lang="pt" lang="pt-BR" aria-label="Português" aria-pressed="true">PT</button>
+        <button type="button" class="lang-btn" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+        <button type="button" class="lang-btn" data-lang="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+      </div>
+    </div>
   </nav>
 
   <!-- HERO -->
   <header class="hero" id="topo">
     <div class="hero-inner">
-      <p class="hero-eyebrow">Portfólio · 2026</p>
+      <p class="hero-eyebrow" data-i18n="hero.eyebrow">Portfólio · 2026</p>
       <h1 class="hero-name">Thiago<br>Nabuco</h1>
       <div class="hero-rule"></div>
-      <p class="hero-tagline">16 anos observando como as pessoas se comportam online. Agora quero usar esse olhar para dar forma às campanhas antes delas existirem.</p>
-      <p class="hero-sub">Estratégia de conteúdo &amp; Planejamento de comunicação · São Paulo, Brasil</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">16 anos observando como as pessoas se comportam online. Agora quero usar esse olhar para dar forma às campanhas antes delas existirem.</p>
+      <p class="hero-sub" data-i18n="hero.sub">Estratégia de conteúdo &amp; Planejamento de comunicação · São Paulo, Brasil</p>
       <div class="tag-row">
-        <span class="tag">Estratégia de conteúdo</span>
+        <span class="tag" data-i18n="tag.1">Estratégia de conteúdo</span>
         <span class="tag">Social listening</span>
-        <span class="tag">Comportamento digital</span>
+        <span class="tag" data-i18n="tag.3">Comportamento digital</span>
         <span class="tag">BR + LATAM</span>
-        <span class="tag">Sociopsicologia</span>
-        <span class="tag">Agência &amp; cliente</span>
+        <span class="tag" data-i18n="tag.5">Sociopsicologia</span>
+        <span class="tag" data-i18n="tag.6">Agência &amp; cliente</span>
       </div>
     </div>
   </header>
@@ -731,15 +864,15 @@
     <div class="metrics-inner">
       <div class="metric">
         <span class="metric-num">16+</span>
-        <span class="metric-lbl">anos trabalhando com mídias sociais e estratégia</span>
+        <span class="metric-lbl" data-i18n="m1.lbl">anos trabalhando com mídias sociais e estratégia</span>
       </div>
       <div class="metric">
-        <span class="metric-num">5</span>
-        <span class="metric-lbl">agências com clientes de grande porte e alcance nacional</span>
+        <span class="metric-num">4</span>
+        <span class="metric-lbl" data-i18n="m2.lbl">agências, de Coca-Cola a Call of Duty</span>
       </div>
       <div class="metric">
-        <span class="metric-num">BR · LATAM</span>
-        <span class="metric-lbl">escopo de atuação em estratégia e localização de conteúdo</span>
+        <span class="metric-num">20+</span>
+        <span class="metric-lbl" data-i18n="m3.lbl">mercados da América Latina na estratégia de localização de Call of Duty</span>
       </div>
     </div>
   </div>
@@ -747,32 +880,36 @@
   <!-- SOBRE -->
   <section class="sobre-section" id="sobre">
     <div class="section-inner">
-      <span class="section-label reveal">Quem sou</span>
-      <h2 class="section-title reveal reveal-delay-1">Uma trajetória<br>que foi se tornando estratégica</h2>
+      <span class="section-label reveal" data-i18n="about.label">Quem sou</span>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="about.title">Uma trajetória<br>que foi se tornando estratégica</h2>
       <div class="sobre-grid">
         <div class="sobre-text reveal">
-          <p>Comecei a trabalhar com mídias sociais quando ainda se debatia o que elas eram. Passei por agências, clientes diretos, coberturas em tempo real do Oscar, Olimpíadas e Brasileirão — e aprendi, na prática, que o que diferencia uma presença digital memorável de uma apenas consistente é quase sempre o mesmo: entender o comportamento de quem está do outro lado.</p>
-          <p>Minha pós-graduação em Sociopsicologia não foi acidente. Sociologia, Antropologia e Psicanálise têm coisas importantes a dizer sobre por que as pessoas compartilham o que compartilham, e sobre o que faz uma mensagem realmente aterrissar. Esse olhar atravessa tudo que faço.</p>
-          <p>Em 2020, cofundei o "Não Dá Para Pausar" — um podcast sobre videogames para quem tem mais de 30 anos. Não foi hobby. Foi laboratório: a cada episódio, eu planejo a estratégia de comunicação do zero e testo o que penso antes de colocar em escala.</p>
-          <p>Hoje estou num momento de transição intencional. Quero levar essa visão para dentro de uma agência, contribuindo onde o pensamento estratégico é o que dá forma às campanhas.</p>
+          <p data-i18n="about.p1">Comecei a trabalhar com mídias sociais quando ainda se debatia o que elas eram. Passei por agências, clientes diretos e coberturas em tempo real do Oscar, Olimpíadas e Brasileirão, e aprendi, na prática, que o que diferencia uma presença digital memorável de uma apenas consistente é quase sempre o mesmo: entender o comportamento de quem está do outro lado.</p>
+          <p data-i18n="about.p2">Minha pós-graduação em Sociopsicologia não foi acidente. Sociologia, Antropologia e Psicanálise têm coisas importantes a dizer sobre por que as pessoas compartilham o que compartilham, e sobre o que faz uma mensagem realmente aterrissar. Esse olhar atravessa tudo que faço.</p>
+          <p data-i18n="about.p3">Em 2020, cofundei o <em>Não Dá Para Pausar</em>, um podcast sobre videogames para quem tem mais de 30 anos. Mais do que hobby, ele funciona como uma etnografia cultural aplicada: em cada conversa investigamos como classe social, região e criação moldam a forma como cada um de nós interpreta os jogos.</p>
+          <p data-i18n="about.p4">Desde 2026, também coordeno a gestão de projetos (PMO) da comunicação do mandato onde trabalho. Isso me mostrou o que acontece com uma estratégia depois que ela sai da apresentação e encontra prazos, aprovações e equipe. Meu foco, porém, segue no planejamento: quero levar esse repertório para dentro de uma agência, onde o pensamento estratégico é o que dá forma às campanhas.</p>
         </div>
         <div class="reveal reveal-delay-1">
           <div class="info-stack">
             <div class="info-block">
-              <p class="info-lbl">Formação base</p>
-              <p class="info-val">Bacharelado em Publicidade e Propaganda<br>Universidade Veiga de Almeida</p>
+              <p class="info-lbl" data-i18n="info.degree.lbl">Formação base</p>
+              <p class="info-val" data-i18n="info.degree.val">Bacharelado em Publicidade e Propaganda<br>Universidade Veiga de Almeida</p>
             </div>
             <div class="info-block">
-              <p class="info-lbl">Pós-graduação</p>
-              <p class="info-val">Sociopsicologia — FESPSP<br>Antropologia do Social Media — UCL<br>Planejamento em Comunicação — Miami Ad School / ESPM</p>
+              <p class="info-lbl" data-i18n="info.post.lbl">Pós-graduação</p>
+              <p class="info-val" data-i18n="info.post.val">Sociopsicologia, FESPSP</p>
             </div>
             <div class="info-block">
-              <p class="info-lbl">Localização</p>
-              <p class="info-val">São Paulo, SP · híbrido ou presencial</p>
+              <p class="info-lbl" data-i18n="info.courses.lbl">Cursos de destaque</p>
+              <p class="info-val" data-i18n="info.courses.val">Antropologia do Social Media, UCL<br>Planejamento em Comunicação, Miami Ad School / ESPM</p>
             </div>
             <div class="info-block">
-              <p class="info-lbl">Idiomas</p>
-              <p class="info-val">Português (nativo) · Inglês (fluente)<br>Espanhol (básico) · Francês (básico)</p>
+              <p class="info-lbl" data-i18n="info.loc.lbl">Localização</p>
+              <p class="info-val" data-i18n="info.loc.val">São Paulo, SP · híbrido ou presencial</p>
+            </div>
+            <div class="info-block">
+              <p class="info-lbl" data-i18n="info.lang.lbl">Idiomas</p>
+              <p class="info-val" data-i18n="info.lang.val">Português (nativo) · Inglês (fluente)<br>Espanhol (básico) · Francês (básico)</p>
             </div>
           </div>
         </div>
@@ -785,33 +922,52 @@
     <div class="section-inner">
       <div class="cases-header reveal">
         <div>
-          <span class="section-label">Trabalhos</span>
-          <h2 class="section-title">O que me formou</h2>
+          <span class="section-label" data-i18n="work.label">Trabalhos</span>
+          <h2 class="section-title" data-i18n="work.title">O que me formou</h2>
         </div>
-        <span class="cases-hint">Clique para expandir</span>
+        <span class="cases-hint" data-i18n="work.hint">Clique para expandir</span>
       </div>
 
       <div class="case-list reveal">
 
         <!-- CASE 1 -->
         <div class="case-card">
-          <div class="case-trigger" onclick="toggleCase(this)">
-            <div class="case-left">
-              <p class="case-client">Activision · Current Global</p>
-              <h3 class="case-name">Call of Duty BR &amp; LATAM</h3>
-              <p class="case-period">Out 2020 – Ago 2023 · Senior Content Analyst</p>
-            </div>
-            <div class="case-ico">+</div>
-          </div>
-          <div class="case-body">
+          <h3 class="case-heading">
+            <button type="button" class="case-trigger" aria-expanded="false" aria-controls="case-1">
+              <span class="case-left">
+                <span class="case-client">Activision · Current Global</span>
+                <span class="case-name">Call of Duty BR &amp; LATAM</span>
+                <span class="case-period" data-i18n="c1.period">Out 2020 - Ago 2023 · Senior Content Analyst</span>
+              </span>
+              <span class="case-ico" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="case-body" id="case-1">
             <div class="case-body-inner">
               <div>
-                <p class="case-section-lbl">Contexto</p>
-                <p class="case-text">Operar a presença oficial de Call of Duty e Call of Duty Mobile para o Brasil e LATAM significa lidar com duas dinâmicas simultâneas: a máquina de conteúdo global da Activision e as especificidades culturais de um público latino-americano com código próprio. O desafio estava menos em publicar e mais em traduzir — não o idioma, mas a relevância.</p>
+                <p class="case-section-lbl" data-i18n="lbl.context">Contexto</p>
+                <p class="case-text" data-i18n="c1.context">Operar a presença oficial de Call of Duty e Call of Duty Mobile para o Brasil e LATAM significa lidar com duas dinâmicas simultâneas: a máquina de conteúdo global da Activision e as especificidades culturais de um público latino-americano com código próprio. O desafio estava menos em publicar e mais em traduzir: não o idioma, mas a relevância.</p>
               </div>
               <div>
-                <p class="case-section-lbl">O que fiz</p>
-                <p class="case-text">Fui o principal responsável pela operação dos perfis de BR e LATAM durante o lançamento dos títulos Black Ops Cold War (2020), Vanguard (2021), Modern Warfare II e Warzone 2.0 (2022). Analisei dados de engajamento para mapear o que realmente ressoava com o público local, alimentando a estratégia de localização de conteúdo global. Também dei suporte ao ecossistema de influenciadores brasileiros e à gestão de relacionamento com consumidores nas redes.</p>
+                <p class="case-section-lbl" data-i18n="lbl.did">O que fiz</p>
+                <p class="case-text" data-i18n="c1.did">Fui o principal responsável pela operação dos perfis de BR e LATAM durante o lançamento dos títulos Black Ops Cold War (2020), Vanguard (2021), Modern Warfare II e Warzone 2.0 (2022). Analisei dados de engajamento para mapear o que realmente ressoava com o público local, alimentando a estratégia de localização de conteúdo global. Também dei suporte ao ecossistema de influenciadores brasileiros e à gestão de relacionamento com consumidores nas redes.</p>
+              </div>
+              <div class="case-numbers">
+                <p class="case-section-lbl" data-i18n="lbl.numbers">Em números</p>
+                <div class="case-metrics">
+                  <div class="case-metric">
+                    <span class="case-metric-num">2</span>
+                    <span class="case-metric-lbl" data-i18n="c1.m1">franquias globais</span>
+                  </div>
+                  <div class="case-metric">
+                    <span class="case-metric-num">4</span>
+                    <span class="case-metric-lbl" data-i18n="c1.m2">lançamentos em 3 anos</span>
+                  </div>
+                  <div class="case-metric">
+                    <span class="case-metric-num" data-i18n="c1.m3.num">+2,5%</span>
+                    <span class="case-metric-lbl" data-i18n="c1.m3">de ressonância cultural com o público brasileiro</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -819,23 +975,25 @@
 
         <!-- CASE 2 -->
         <div class="case-card">
-          <div class="case-trigger" onclick="toggleCase(this)">
-            <div class="case-left">
-              <p class="case-client">Club Social · Gomes da Costa · Pom Pom · FCB Brasil</p>
-              <h3 class="case-name">Planejamento de Social em Agência</h3>
-              <p class="case-period">Abr 2017 – Ago 2019 · Social Media Planner</p>
-            </div>
-            <div class="case-ico">+</div>
-          </div>
-          <div class="case-body">
+          <h3 class="case-heading">
+            <button type="button" class="case-trigger" aria-expanded="false" aria-controls="case-2">
+              <span class="case-left">
+                <span class="case-client">Club Social · Gomes da Costa · Pom Pom · FCB Brasil</span>
+                <span class="case-name" data-i18n="c2.name">Planejamento de Social em Agência</span>
+                <span class="case-period" data-i18n="c2.period">Abr 2017 - Ago 2019 · Social Media Planner</span>
+              </span>
+              <span class="case-ico" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="case-body" id="case-2">
             <div class="case-body-inner">
               <div>
-                <p class="case-section-lbl">Contexto</p>
-                <p class="case-text">A FCB foi minha primeira experiência como planejador dentro de uma agência. Três clientes com perfis completamente diferentes — um snack, uma marca de pescados, uma marca de fraldas — com uma necessidade em comum: estratégia de social que fosse além do calendário sazonal e gerasse insight real para a comunicação.</p>
+                <p class="case-section-lbl" data-i18n="lbl.context">Contexto</p>
+                <p class="case-text" data-i18n="c2.context">A FCB foi minha primeira experiência como planejador dentro de uma agência. Três clientes com perfis completamente diferentes (um snack, uma marca de pescados e uma marca de fraldas) com uma necessidade em comum: estratégia de social que fosse além do calendário sazonal e gerasse insight real para a comunicação.</p>
               </div>
               <div>
-                <p class="case-section-lbl">O que fiz</p>
-                <p class="case-text">Desenvolvi planejamento tático baseado em social listening estruturado e monitoramento de concorrência. Os dados que coletava não ficavam em relatório: viravam briefings que orientavam ajustes de comunicação. Também conduzi o processo completo de pesquisa, seleção e treinamento da ferramenta de social da área — o que exigiu leitura das necessidades dos times antes de qualquer decisão técnica.</p>
+                <p class="case-section-lbl" data-i18n="lbl.did">O que fiz</p>
+                <p class="case-text" data-i18n="c2.did">Desenvolvi planejamento tático baseado em social listening estruturado e monitoramento de concorrência. Os dados que coletava não ficavam em relatório: viravam briefings que orientavam ajustes de comunicação. Também conduzi o processo completo de pesquisa, seleção e treinamento da ferramenta de social da área, o que exigiu leitura das necessidades dos times antes de qualquer decisão técnica.</p>
               </div>
             </div>
           </div>
@@ -843,23 +1001,49 @@
 
         <!-- CASE 3 -->
         <div class="case-card">
-          <div class="case-trigger" onclick="toggleCase(this)">
-            <div class="case-left">
-              <p class="case-client">Assembleia Legislativa do Estado de São Paulo</p>
-              <h3 class="case-name">Comunicação Pública e Posicionamento Político</h3>
-              <p class="case-period">Ago 2023 – Presente · Estrategista de Conteúdo</p>
-            </div>
-            <div class="case-ico">+</div>
-          </div>
-          <div class="case-body">
+          <h3 class="case-heading">
+            <button type="button" class="case-trigger" aria-expanded="false" aria-controls="case-3">
+              <span class="case-left">
+                <span class="case-client" data-i18n="c3.client">Assembleia Legislativa do Estado de São Paulo</span>
+                <span class="case-name" data-i18n="c3.name">Comunicação de um mandato, da estratégia à entrega</span>
+                <span class="case-period" data-i18n="c3.period">Ago 2023 - Presente · Estrategista de Conteúdo e Gerente de Projetos de Comunicação (PMO)</span>
+              </span>
+              <span class="case-ico" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="case-body" id="case-3">
             <div class="case-body-inner">
               <div>
-                <p class="case-section-lbl">Contexto</p>
-                <p class="case-text">Comunicação política tem dinâmicas que a comunicação de marca raramente enfrenta: temas sensíveis, audiências heterogêneas, cobrança pública constante e a necessidade de construir autoridade sem abrir mão de proximidade. Trabalhar com a Deputada Estadual Andréa Werner é estar num ambiente onde cada decisão de conteúdo tem peso real.</p>
+                <p class="case-section-lbl" data-i18n="lbl.context">Contexto</p>
+                <p class="case-text" data-i18n="c3.context">Comunicação política tem dinâmicas que a comunicação de marca raramente enfrenta, como temas sensíveis e cobrança pública constante. No mandato da Deputada Estadual Andréa Werner, comecei construindo a estratégia e, a partir de 2026, assumi também a gestão dos projetos de comunicação. Foi a chance de ver de perto o que acontece com um planejamento quando ele encontra prazos, aprovações e uma equipe real.</p>
               </div>
               <div>
-                <p class="case-section-lbl">O que fiz</p>
-                <p class="case-text">Assumi a responsabilidade integral pela presença digital: planejamento estratégico de comunicação, cronograma editorial e publicação. Desenvolvi o planejamento que orienta como o mandato se posiciona nas redes, integrando a pauta política à linguagem acessível e consistência de tom ao longo de todo o calendário legislativo.</p>
+                <p class="case-section-lbl" data-i18n="lbl.did">O que fiz</p>
+                <div class="case-phase">
+                  <p class="case-phase-lbl" data-i18n="c3.ph1.lbl">Estratégia · 2023 a 2026</p>
+                  <p class="case-text" data-i18n="c3.ph1">Construí do zero a estratégia de comunicação digital do mandato, com tom de voz, calendário editorial, critérios de pauta e fluxo de produção entre gabinete e canais. O planejamento passou a ser orientado por análise de engajamento e comportamento da audiência, e o alcance orgânico cresceu cerca de 20%.</p>
+                </div>
+                <div class="case-phase">
+                  <p class="case-phase-lbl" data-i18n="c3.ph2.lbl">Gestão de projetos (PMO) · desde 2026</p>
+                  <p class="case-text" data-i18n="c3.ph2">Estruturei a gestão de projetos da comunicação com um fluxo em Kanban de cinco etapas, limite de demandas simultâneas e alerta para pautas paradas, o que trouxe previsibilidade às entregas. Organizei o acervo de vídeo em um banco de conteúdos com painel de indicadores, coordeno a agenda de gravação de duas porta-vozes e a fila de aprovação entre gabinete, jurídico e criação, e instituí uma revisão de conformidade antes de cada publicação.</p>
+                </div>
+              </div>
+              <div class="case-numbers">
+                <p class="case-section-lbl" data-i18n="lbl.numbers">Em números</p>
+                <div class="case-metrics">
+                  <div class="case-metric">
+                    <span class="case-metric-num">~20%</span>
+                    <span class="case-metric-lbl" data-i18n="c3.m1">de crescimento no alcance orgânico</span>
+                  </div>
+                  <div class="case-metric">
+                    <span class="case-metric-num">5</span>
+                    <span class="case-metric-lbl" data-i18n="c3.m2">etapas no fluxo de produção</span>
+                  </div>
+                  <div class="case-metric">
+                    <span class="case-metric-num">2</span>
+                    <span class="case-metric-lbl" data-i18n="c3.m3">porta-vozes coordenadas</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -867,23 +1051,25 @@
 
         <!-- CASE 4 -->
         <div class="case-card">
-          <div class="case-trigger" onclick="toggleCase(this)">
-            <div class="case-left">
-              <p class="case-client">Cinemark · SporTV · Arabella Agency</p>
-              <h3 class="case-name">Real-Time, Eventos e Dois Clientes ao Mesmo Tempo</h3>
-              <p class="case-period">Nov 2014 – Dez 2016 · Social Media</p>
-            </div>
-            <div class="case-ico">+</div>
-          </div>
-          <div class="case-body">
+          <h3 class="case-heading">
+            <button type="button" class="case-trigger" aria-expanded="false" aria-controls="case-4">
+              <span class="case-left">
+                <span class="case-client">Cinemark · SporTV · Arabella Agency</span>
+                <span class="case-name" data-i18n="c4.name">Real-Time, Eventos e Dois Clientes ao Mesmo Tempo</span>
+                <span class="case-period" data-i18n="c4.period">Nov 2014 - Dez 2016 · Social Media</span>
+              </span>
+              <span class="case-ico" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="case-body" id="case-4">
             <div class="case-body-inner">
               <div>
-                <p class="case-section-lbl">Contexto</p>
-                <p class="case-text">Cinemark e SporTV são clientes que vivem de momento. Oscar, pré-estreias, Brasileirão, Rio 2016, CBLoL — conteúdo em tempo real exige raciocínio rápido, repertório cultural e capacidade de tomar decisões sem esperar aprovação em loop. Foi aqui que aprendi o peso da interface direta com o cliente e o valor de ter uma visão de planejamento mesmo diante do improviso.</p>
+                <p class="case-section-lbl" data-i18n="lbl.context">Contexto</p>
+                <p class="case-text" data-i18n="c4.context">Cinemark e SporTV são clientes que vivem de momento. Oscar, pré-estreias, Brasileirão, Rio 2016, CBLoL: conteúdo em tempo real exige raciocínio rápido, repertório cultural e capacidade de tomar decisões sem esperar aprovação em loop. Foi aqui que aprendi o peso da interface direta com o cliente e o valor de ter uma visão de planejamento mesmo diante do improviso.</p>
               </div>
               <div>
-                <p class="case-section-lbl">O que fiz</p>
-                <p class="case-text">Atuei na interface diária entre cliente e agência, no planejamento e produção de conteúdo, na análise de concorrência e no desenvolvimento de relatórios periódicos. As coberturas em tempo real — Oscar, Comic-Con Experience, Brasileirão, Olimpíadas e Paralimpíadas Rio 2016 — exigiram presença, agilidade editorial e a habilidade de ler o humor do público no momento e transformar isso em publicações que funcionavam.</p>
+                <p class="case-section-lbl" data-i18n="lbl.did">O que fiz</p>
+                <p class="case-text" data-i18n="c4.did">Atuei na interface diária entre cliente e agência, no planejamento e produção de conteúdo, na análise de concorrência e no desenvolvimento de relatórios periódicos. As coberturas em tempo real (Oscar, Comic-Con Experience, Brasileirão, Olimpíadas e Paralimpíadas Rio 2016) exigiram presença, agilidade editorial e a habilidade de ler o humor do público no momento e transformar isso em publicações que funcionavam.</p>
               </div>
             </div>
           </div>
@@ -891,23 +1077,25 @@
 
         <!-- CASE 5 -->
         <div class="case-card">
-          <div class="case-trigger" onclick="toggleCase(this)">
-            <div class="case-left">
-              <p class="case-client">Coca-Cola · e.life</p>
-              <h3 class="case-name">A Escola da Consistência sob Pressão</h3>
-              <p class="case-period">Abr 2012 – Mai 2014 · Analista de Relacionamento</p>
-            </div>
-            <div class="case-ico">+</div>
-          </div>
-          <div class="case-body">
+          <h3 class="case-heading">
+            <button type="button" class="case-trigger" aria-expanded="false" aria-controls="case-5">
+              <span class="case-left">
+                <span class="case-client">Coca-Cola · e.life</span>
+                <span class="case-name" data-i18n="c5.name">A Escola da Consistência sob Pressão</span>
+                <span class="case-period" data-i18n="c5.period">Abr 2012 - Mai 2014 · Analista de Relacionamento</span>
+              </span>
+              <span class="case-ico" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="case-body" id="case-5">
             <div class="case-body-inner">
               <div>
-                <p class="case-section-lbl">Contexto</p>
-                <p class="case-text">Início de carreira com uma conta de alto volume e alta exposição. Coca-Cola não tem espaço para improviso: cada interação conta, cada crise precisa de resposta calibrada, e a consistência de tom precisa se manter mesmo sob pressão. Foi a escola de base que moldou minha relação com dados e com o comportamento do consumidor.</p>
+                <p class="case-section-lbl" data-i18n="lbl.context">Contexto</p>
+                <p class="case-text" data-i18n="c5.context">Início de carreira com uma conta de alto volume e alta exposição. Coca-Cola não tem espaço para improviso: cada interação conta, cada crise precisa de resposta calibrada, e a consistência de tom precisa se manter mesmo sob pressão. Foi a escola de base que moldou minha relação com dados e com o comportamento do consumidor.</p>
               </div>
               <div>
-                <p class="case-section-lbl">O que fiz</p>
-                <p class="case-text">Responsável pelo monitoramento e relacionamento nas mídias sociais das páginas da marca — incluindo Coca-Cola Zero no Facebook e Coca-Cola no Twitter. Desenvolvia relatórios quinzenais com insights extraídos dos dados monitorados, que alimentavam diretamente o trabalho das agências de conteúdo da marca. Integrei a equipe de gerenciamento e supressão de crises.</p>
+                <p class="case-section-lbl" data-i18n="lbl.did">O que fiz</p>
+                <p class="case-text" data-i18n="c5.did">Responsável pelo monitoramento e relacionamento nas mídias sociais das páginas da marca, incluindo Coca-Cola Zero no Facebook e Coca-Cola no Twitter. Desenvolvia relatórios quinzenais com insights extraídos dos dados monitorados, que alimentavam diretamente o trabalho das agências de conteúdo da marca. Integrei a equipe de gerenciamento e supressão de crises.</p>
               </div>
             </div>
           </div>
@@ -920,45 +1108,47 @@
   <!-- HABILIDADES -->
   <section class="skills-section" id="habilidades">
     <div class="section-inner">
-      <span class="section-label reveal">Como penso e o que uso</span>
-      <h2 class="section-title reveal reveal-delay-1">Habilidades</h2>
+      <span class="section-label reveal" data-i18n="skills.label">Como penso e o que uso</span>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="skills.title">Habilidades</h2>
 
       <div class="skills-cloud reveal reveal-delay-2">
-        <span class="pill pill-core">Planejamento estratégico</span>
-        <span class="pill pill-core">Estratégia criativa</span>
+        <span class="pill pill-core" data-i18n="pill.strategic">Planejamento estratégico</span>
+        <span class="pill pill-core" data-i18n="pill.creative">Estratégia criativa</span>
         <span class="pill pill-core">Social listening</span>
-        <span class="pill pill-core">Análise de comportamento digital</span>
-        <span class="pill pill-mid">Marketing de Mídias Sociais</span>
+        <span class="pill pill-core" data-i18n="pill.behavior">Análise de comportamento digital</span>
+        <span class="pill pill-mid" data-i18n="pill.smm">Marketing de Mídias Sociais</span>
         <span class="pill pill-mid">Design Thinking</span>
-        <span class="pill pill-mid">Métricas e análise de dados</span>
-        <span class="pill pill-mid">Estratégia de Marketing</span>
+        <span class="pill pill-mid" data-i18n="pill.metrics">Métricas e análise de dados</span>
+        <span class="pill pill-mid" data-i18n="pill.mktstrategy">Estratégia de Marketing</span>
+        <span class="pill pill-mid" data-i18n="pill.pmo">Gestão de projetos (PMO)</span>
+        <span class="pill pill-mid" data-i18n="pill.kanban">Fluxo de produção em Kanban</span>
         <span class="pill pill-mid">Social CRM</span>
-        <span class="pill pill-mid">Gamification</span>
-        <span class="pill pill-soft">Marketing Digital</span>
+        <span class="pill pill-mid" data-i18n="pill.gamification">Gamification</span>
+        <span class="pill pill-soft" data-i18n="pill.digital">Marketing Digital</span>
         <span class="pill pill-soft">SEO</span>
         <span class="pill pill-soft">Google Analytics</span>
-        <span class="pill pill-soft">Publicidade</span>
+        <span class="pill pill-soft" data-i18n="pill.ads">Publicidade</span>
       </div>
 
       <div class="formation-grid reveal reveal-delay-3">
         <div class="formation-item">
           <p class="formation-school">FESPSP</p>
-          <p class="formation-degree">Pós-graduação em Sociopsicologia</p>
-          <p class="formation-year">2017 – 2018</p>
+          <p class="formation-degree" data-i18n="edu.1">Pós-graduação em Sociopsicologia</p>
+          <p class="formation-year">2017-2018</p>
         </div>
         <div class="formation-item">
           <p class="formation-school">UCL</p>
-          <p class="formation-degree">Antropologia do Social Media</p>
+          <p class="formation-degree" data-i18n="edu.2">Antropologia do Social Media</p>
           <p class="formation-year">2016</p>
         </div>
         <div class="formation-item">
           <p class="formation-school">Miami Ad School / ESPM</p>
-          <p class="formation-degree">Pocket — Planejamento em Comunicação</p>
+          <p class="formation-degree" data-i18n="edu.3">Pocket: Planejamento em Comunicação</p>
           <p class="formation-year">2013</p>
         </div>
         <div class="formation-item">
           <p class="formation-school">Wharton / UPenn</p>
-          <p class="formation-degree">Gamification</p>
+          <p class="formation-degree" data-i18n="edu.4">Gamification</p>
           <p class="formation-year">2012</p>
         </div>
         <div class="formation-item">
@@ -968,8 +1158,8 @@
         </div>
         <div class="formation-item">
           <p class="formation-school">Universidade Veiga de Almeida</p>
-          <p class="formation-degree">Bacharel — Publicidade e Propaganda</p>
-          <p class="formation-year">2010 – 2014</p>
+          <p class="formation-degree" data-i18n="edu.6">Bacharel em Publicidade e Propaganda</p>
+          <p class="formation-year">2010-2014</p>
         </div>
       </div>
     </div>
@@ -978,35 +1168,39 @@
   <!-- RECOMENDAÇÕES -->
   <section class="rec-section">
     <div class="section-inner">
-      <span class="section-label reveal">Quem trabalhou comigo</span>
-      <h2 class="section-title reveal reveal-delay-1">O que dizem</h2>
+      <span class="section-label reveal" data-i18n="rec.label">Quem trabalhou comigo</span>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="rec.title">O que dizem</h2>
       <div class="rec-grid">
         <div class="rec-card reveal">
-          <p class="rec-quote">"Thiago é capaz de avaliar rapidamente cenários complexos e conciliar perspectivas diferentes para trazer soluções e ideias novas. Em sessões de brainstorm e planejamento, isso ficava especialmente claro — com a forma como ele somava ideias aparentemente díspares sob a ótica do resultado esperado."</p>
+          <p class="rec-quote" data-i18n="rec1.quote">“[Thiago] é capaz de avaliar rapidamente cenários complexos e conciliar perspectivas diferentes para trazer soluções e ideias novas, que impactam o trabalho diretamente. Em sessões de brainstorm e planejamento isso ficava especialmente claro com a forma como conseguia somar ideias aparentemente díspares sob a ótica do resultado esperado das ações.”</p>
           <div>
             <p class="rec-author-name">Thomás Levy</p>
-            <p class="rec-author-role">Vice-presidente · OCTO PCD Diversidade</p>
+            <p class="rec-author-role" data-i18n="rec1.role">Vice-presidente (voluntário) · OCTO PCD Diversidade</p>
+            <p class="rec-note" data-i18n="rec1.note"></p>
           </div>
         </div>
         <div class="rec-card reveal reveal-delay-1">
-          <p class="rec-quote">"Thiago was a key team member during the years I worked with him, where he always overdelivered and had always the right mindset to make things happen."</p>
+          <p class="rec-quote" data-i18n="rec2.quote">“Thiago foi um membro-chave da equipe durante os anos em que trabalhei com ele, sempre entregando além do esperado e sempre com a mentalidade certa para fazer as coisas acontecerem.”</p>
           <div>
             <p class="rec-author-name">Oscar Salazar</p>
             <p class="rec-author-role">Marketing &amp; Partnerships Manager · Paradox Interactive</p>
+            <p class="rec-note" data-i18n="rec2.note">Tradução livre do original em inglês.</p>
           </div>
         </div>
         <div class="rec-card reveal reveal-delay-2">
-          <p class="rec-quote">"Do planejamento das ações especiais até a concepção de conteúdos de nicho, Thiago se mostrou criativo, engajado e comprometido, abraçando as demandas mais diversas com bom humor e prazer no que faz."</p>
+          <p class="rec-quote" data-i18n="rec3.quote">“Do auxílio ao atendimento da conta, planejamento das ações especiais (como Batalha de Posts Star Wars) até a concepção de conteúdos de nicho, Thiago se mostrou criativo, engajado e comprometido, abraçando as demandas mais diversas com bom humor e prazer no que faz.”</p>
           <div>
             <p class="rec-author-name">Patrícia Moura</p>
             <p class="rec-author-role">Founder &amp; CEO · Pride Content (ex-Arabella Agency)</p>
+            <p class="rec-note" data-i18n="rec3.note"></p>
           </div>
         </div>
         <div class="rec-card reveal reveal-delay-3">
-          <p class="rec-quote">"Sempre busca o aprimoramento de técnicas e sempre que possível dá sugestões que poderiam beneficiar o cliente, aproximando-o cada vez mais de seu público."</p>
+          <p class="rec-quote" data-i18n="rec4.quote">“[...] sempre busca o aprimoramento de técnicas para o mercado de trabalho. [...] Sempre que possível dá sugestões que poderiam beneficiar o cliente aproximando-o, cada vez mais, de seu público.”</p>
           <div>
             <p class="rec-author-name">Carla Mateus</p>
-            <p class="rec-author-role">Relacionamento Omnichannel · The Coca-Cola Company</p>
+            <p class="rec-author-role" data-i18n="rec4.role">Relacionamento Omnichannel · The Coca-Cola Company</p>
+            <p class="rec-note" data-i18n="rec4.note"></p>
           </div>
         </div>
       </div>
@@ -1016,14 +1210,14 @@
   <!-- O QUE BUSCO -->
   <section class="busco-section">
     <div class="busco-inner">
-      <span class="section-label" style="color: var(--purple-mid);">O que busco</span>
-      <p class="busco-text">Quero trabalhar em agências onde o planejamento seja o que dá forma às campanhas — não uma etapa burocrática entre o briefing e a criação. Prefiro ambientes onde perguntar "por quê?" seja tão valorizado quanto o "como".</p>
+      <span class="section-label" style="color: var(--purple-mid);" data-i18n="seek.label">O que busco</span>
+      <p class="busco-text" data-i18n="seek.text">Quero trabalhar em agências onde o planejamento seja o que dá forma às campanhas, e não uma etapa burocrática entre o briefing e a criação. Prefiro ambientes onde perguntar “por quê?” seja tão valorizado quanto o “como”.</p>
       <div class="busco-tags">
-        <span class="busco-tag">Supervisor de Planejamento</span>
-        <span class="busco-tag">Estrategista Sênior de Conteúdo</span>
-        <span class="busco-tag">Agências de publicidade</span>
-        <span class="busco-tag">Comunicação com intencionalidade</span>
-        <span class="busco-tag">Cultura estratégica forte</span>
+        <span class="busco-tag" data-i18n="seek.t1">Supervisor de Planejamento</span>
+        <span class="busco-tag" data-i18n="seek.t2">Estrategista Sênior de Conteúdo</span>
+        <span class="busco-tag" data-i18n="seek.t3">Agências de publicidade</span>
+        <span class="busco-tag" data-i18n="seek.t4">Comunicação com intencionalidade</span>
+        <span class="busco-tag" data-i18n="seek.t5">Cultura estratégica forte</span>
       </div>
     </div>
   </section>
@@ -1031,23 +1225,23 @@
   <!-- CONTATO -->
   <section class="contato-section" id="contato">
     <div class="section-inner">
-      <span class="section-label reveal">Contato</span>
+      <span class="section-label reveal" data-i18n="contact.label">Contato</span>
       <div class="contato-grid reveal reveal-delay-1">
         <div>
-          <h2 class="contato-title">Vamos<br>conversar?</h2>
-          <p class="contato-sub">Se você está construindo ou reestruturando uma operação de conteúdo com foco em estratégia, me chama.</p>
+          <h2 class="contato-title" data-i18n="contact.title">Vamos<br>conversar?</h2>
+          <p class="contato-sub" data-i18n="contact.sub">Se a sua agência precisa de alguém que pense a estratégia antes da criação e acompanhe até a entrega, me chama.</p>
         </div>
         <div class="contato-links">
           <a href="mailto:thiagonabucodf@gmail.com" class="c-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             thiagonabucodf@gmail.com
           </a>
           <a href="tel:+5511941918611" class="c-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6.29 6.29l.95-.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-            (11) 94191-8611
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6.29 6.29l.95-.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+            <span data-i18n="contact.phone">(11) 94191-8611</span>
           </a>
           <a href="https://linkedin.com/in/thiagonabucodf" target="_blank" rel="noopener" class="c-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             linkedin.com/in/thiagonabucodf
           </a>
         </div>
@@ -1060,23 +1254,330 @@
   </footer>
 
   <script>
-    // Accordion
-    function toggleCase(trigger) {
-      const card = trigger.closest('.case-card');
-      const body = card.querySelector('.case-body');
-      const isOpen = card.classList.contains('open');
+    /* ─── TRADUÇÕES ─────────────────────────────────────
+       O português é o texto original escrito no HTML acima.
+       Para editar EN ou ES, altere as frases abaixo mantendo
+       as chaves (o texto antes dos dois-pontos) iguais.      */
+    const I18N = {
+      en: {
+        'meta.title': 'Thiago Nabuco · Communication Strategist',
+        'meta.description': 'Portfolio of Thiago Nabuco, a communication strategist with 16 years of experience in planning, social listening and content strategy.',
+        'lang.aria': 'Language',
+        'nav.about': 'About',
+        'nav.work': 'Work',
+        'nav.skills': 'Skills',
+        'nav.contact': 'Contact',
+        'hero.eyebrow': 'Portfolio · 2026',
+        'hero.tagline': '16 years observing how people behave online. Now I want to use that lens to shape campaigns before they exist.',
+        'hero.sub': 'Content strategy &amp; Communication planning · São Paulo, Brazil',
+        'tag.1': 'Content strategy',
+        'tag.3': 'Digital behavior',
+        'tag.5': 'Sociopsychology',
+        'tag.6': 'Agency &amp; client',
+        'm1.lbl': 'years working in social media and strategy',
+        'm2.lbl': 'agencies, from Coca-Cola to Call of Duty',
+        'm3.lbl': 'Latin American markets in the Call of Duty localization strategy',
+        'about.label': 'Who I am',
+        'about.title': 'A career path<br>that grew more strategic',
+        'about.p1': 'I started working with social media when people were still debating what it was. I went through agencies, direct clients and real-time coverage of the Oscars, the Olympics and the Brasileirão (Brazil\'s national football league), and I learned in practice that what separates a memorable digital presence from a merely consistent one is almost always the same thing: understanding the behavior of whoever is on the other side.',
+        'about.p2': 'My postgraduate degree in Sociopsychology was no accident. Sociology, Anthropology and Psychoanalysis have important things to say about why people share what they share, and about what makes a message truly land. That lens runs through everything I do.',
+        'about.p3': 'In 2020, I co-founded <em>Não Dá Para Pausar</em>, a video game podcast for people over 30. More than a hobby, it works as applied cultural ethnography: in each conversation we explore how social class, region and upbringing shape the way each of us interprets games.',
+        'about.p4': 'Since 2026, I have also run communication project management (PMO) for the legislative office where I work. It showed me what happens to a strategy once it leaves the presentation and meets deadlines, approvals and a team. My focus, however, remains on planning: I want to bring this experience into an agency, where strategic thinking is what shapes campaigns.',
+        'info.degree.lbl': 'Degree',
+        'info.degree.val': 'Bachelor\'s in Advertising<br>Universidade Veiga de Almeida',
+        'info.post.lbl': 'Postgraduate',
+        'info.post.val': 'Sociopsychology, FESPSP',
+        'info.courses.lbl': 'Featured courses',
+        'info.courses.val': 'Anthropology of Social Media, UCL<br>Communication Planning, Miami Ad School / ESPM',
+        'info.loc.lbl': 'Location',
+        'info.loc.val': 'São Paulo, Brazil · hybrid or on-site',
+        'info.lang.lbl': 'Languages',
+        'info.lang.val': 'Portuguese (native) · English (fluent)<br>Spanish (basic) · French (basic)',
+        'work.label': 'Work',
+        'work.title': 'What shaped me',
+        'work.hint': 'Click to expand',
+        'lbl.context': 'Context',
+        'lbl.did': 'What I did',
+        'lbl.numbers': 'By the numbers',
+        'c1.period': 'Oct 2020 - Aug 2023 · Senior Content Analyst',
+        'c1.context': 'Running the official presence of Call of Duty and Call of Duty Mobile for Brazil and LATAM means handling two simultaneous dynamics: Activision\'s global content machine and the cultural specifics of a Latin American audience with its own codes. The challenge was less about publishing and more about translating: not the language, but the relevance.',
+        'c1.did': 'I was the lead for operating the BR and LATAM profiles during the launches of Black Ops Cold War (2020), Vanguard (2021), Modern Warfare II and Warzone 2.0 (2022). I analyzed engagement data to map what truly resonated with local audiences, feeding the global content localization strategy. I also supported the Brazilian influencer ecosystem and consumer relationship management on social media.',
+        'c1.m1': 'global franchises',
+        'c1.m2': 'launches in 3 years',
+        'c1.m3.num': '+2.5%',
+        'c1.m3': 'in cultural resonance with Brazilian audiences',
+        'c2.name': 'Social Planning at an Agency',
+        'c2.period': 'Apr 2017 - Aug 2019 · Social Media Planner',
+        'c2.context': 'FCB was my first experience as a planner inside an agency. Three clients with completely different profiles (a snack, a seafood brand and a diaper brand) shared one need: a social strategy that went beyond the seasonal calendar and generated real insight for communication.',
+        'c2.did': 'I developed tactical planning based on structured social listening and competitor monitoring. The data I gathered didn\'t stay in reports: it became briefs that guided communication adjustments. I also led the full process of researching, selecting and training people on the department\'s social media tool, which required reading the teams\' needs before any technical decision.',
+        'c3.client': 'São Paulo State Legislative Assembly (Alesp)',
+        'c3.name': 'Communication for a legislative office, from strategy to delivery',
+        'c3.period': 'Aug 2023 - Present · Content Strategist and Communication Project Manager (PMO)',
+        'c3.context': 'Political communication has dynamics that brand communication rarely faces, such as sensitive topics and constant public scrutiny. In the office of State Representative Andréa Werner, I started by building the strategy and, from 2026 on, also took over communication project management. It was a chance to see up close what happens to a plan when it meets deadlines, approvals and a real team.',
+        'c3.ph1.lbl': 'Strategy · 2023 to 2026',
+        'c3.ph1': 'I built the office\'s digital communication strategy from scratch, with brand voice, editorial calendar, editorial criteria and a production workflow between the office and its channels. Planning became guided by engagement analysis and audience behavior, and organic reach grew by about 20%.',
+        'c3.ph2.lbl': 'Project management (PMO) · since 2026',
+        'c3.ph2': 'I set up communication project management with a five-stage Kanban workflow, a limit on simultaneous tasks and alerts for stalled items, which brought predictability to deliveries. I organized the video library into a content bank with a KPI dashboard, I coordinate recording schedules for two spokespersons and the approval queue across the office, legal and creative teams, and I instituted a compliance review before every publication.',
+        'c3.m1': 'growth in organic reach',
+        'c3.m2': 'stages in the production workflow',
+        'c3.m3': 'spokespersons coordinated',
+        'c4.name': 'Real-Time, Events and Two Clients at Once',
+        'c4.period': 'Nov 2014 - Dec 2016 · Social Media',
+        'c4.context': 'Cinemark and SporTV are clients that live in the moment. The Oscars, premieres, the Brasileirão, Rio 2016, CBLoL: real-time content demands quick thinking, cultural repertoire and the ability to make decisions without waiting on endless approval loops. This is where I learned the weight of working directly with the client and the value of a planning mindset even when improvising.',
+        'c4.did': 'I worked on the daily client-agency interface, content planning and production, competitor analysis and periodic reporting. Real-time coverage (the Oscars, Comic-Con Experience, the Brasileirão, the Rio 2016 Olympics and Paralympics) required presence, editorial agility and the ability to read the audience\'s mood in the moment and turn it into posts that worked.',
+        'c5.name': 'The School of Consistency Under Pressure',
+        'c5.period': 'Apr 2012 - May 2014 · Relationship Analyst',
+        'c5.context': 'Early career, with a high-volume, high-visibility account. Coca-Cola leaves no room for improvisation: every interaction counts, every crisis needs a calibrated response, and tone consistency has to hold even under pressure. It was the foundational school that shaped my relationship with data and consumer behavior.',
+        'c5.did': 'I was responsible for social media monitoring and relationship management on the brand\'s pages, including Coca-Cola Zero on Facebook and Coca-Cola on Twitter. I produced biweekly reports with insights drawn from monitored data, which directly fed the work of the brand\'s content agencies. I was part of the team that managed and contained crises.',
+        'skills.label': 'How I think and what I use',
+        'skills.title': 'Skills',
+        'pill.strategic': 'Strategic planning',
+        'pill.creative': 'Creative strategy',
+        'pill.behavior': 'Digital behavior analysis',
+        'pill.smm': 'Social Media Marketing',
+        'pill.metrics': 'Metrics and data analysis',
+        'pill.mktstrategy': 'Marketing Strategy',
+        'pill.pmo': 'Project management (PMO)',
+        'pill.kanban': 'Kanban production workflow',
+        'pill.gamification': 'Gamification',
+        'pill.digital': 'Digital Marketing',
+        'pill.ads': 'Advertising',
+        'edu.1': 'Postgraduate degree in Sociopsychology',
+        'edu.2': 'Anthropology of Social Media',
+        'edu.3': 'Pocket: Communication Planning',
+        'edu.4': 'Gamification',
+        'edu.6': 'Bachelor\'s in Advertising',
+        'rec.label': 'People I\'ve worked with',
+        'rec.title': 'What they say',
+        'rec1.quote': '“[Thiago] can quickly assess complex scenarios and reconcile different perspectives to bring new solutions and ideas that directly impact the work. In brainstorming and planning sessions this was especially clear in the way he brought together seemingly disparate ideas through the lens of the expected results.”',
+        'rec1.role': 'Vice President (volunteer) · OCTO PCD Diversidade',
+        'rec1.note': 'Free translation from the Portuguese original.',
+        'rec2.quote': '“Thiago was a key team member during the years I worked with him, where he always overdelivered and had always the right mindset to make things happen.”',
+        'rec2.note': '',
+        'rec3.quote': '“From supporting account management and planning special actions (such as the Star Wars Post Battle) to developing niche content, Thiago proved to be creative, engaged and committed, embracing the most diverse demands with good humor and pleasure in what he does.”',
+        'rec3.note': 'Free translation from the Portuguese original.',
+        'rec4.quote': '“[...] always seeks to improve his techniques for the job market. [...] Whenever possible, he offers suggestions that could benefit the client, bringing it ever closer to its audience.”',
+        'rec4.role': 'Omnichannel Relationship · The Coca-Cola Company',
+        'rec4.note': 'Free translation from the Portuguese original.',
+        'seek.label': 'What I\'m looking for',
+        'seek.text': 'I want to work at agencies where planning is what shapes campaigns, not a bureaucratic step between the brief and the creative work. I prefer environments where asking “why?” is valued as much as the “how”.',
+        'seek.t1': 'Planning Supervisor',
+        'seek.t2': 'Senior Content Strategist',
+        'seek.t3': 'Advertising agencies',
+        'seek.t4': 'Intentional communication',
+        'seek.t5': 'Strong strategic culture',
+        'contact.label': 'Contact',
+        'contact.title': 'Shall we<br>talk?',
+        'contact.sub': 'If your agency needs someone who thinks through strategy before the creative work and follows it all the way to delivery, get in touch.',
+        'contact.phone': '+55 11 94191-8611'
+      },
+      es: {
+        'meta.title': 'Thiago Nabuco · Estratega de Comunicación',
+        'meta.description': 'Portafolio de Thiago Nabuco, estratega de comunicación con 16 años de experiencia en planificación, social listening y estrategia de contenido.',
+        'lang.aria': 'Idioma',
+        'nav.about': 'Sobre mí',
+        'nav.work': 'Trabajos',
+        'nav.skills': 'Habilidades',
+        'nav.contact': 'Contacto',
+        'hero.eyebrow': 'Portafolio · 2026',
+        'hero.tagline': '16 años observando cómo se comportan las personas en internet. Ahora quiero usar esa mirada para dar forma a las campañas antes de que existan.',
+        'hero.sub': 'Estrategia de contenido y Planificación de comunicación · São Paulo, Brasil',
+        'tag.1': 'Estrategia de contenido',
+        'tag.3': 'Comportamiento digital',
+        'tag.5': 'Sociopsicología',
+        'tag.6': 'Agencia y cliente',
+        'm1.lbl': 'años trabajando con redes sociales y estrategia',
+        'm2.lbl': 'agencias, de Coca-Cola a Call of Duty',
+        'm3.lbl': 'mercados de América Latina en la estrategia de localización de Call of Duty',
+        'about.label': 'Quién soy',
+        'about.title': 'Una trayectoria<br>que se fue volviendo estratégica',
+        'about.p1': 'Empecé a trabajar con redes sociales cuando todavía se debatía qué eran. Pasé por agencias, clientes directos y coberturas en tiempo real de los Óscar, los Juegos Olímpicos y el Brasileirão, y aprendí en la práctica que lo que diferencia una presencia digital memorable de una simplemente consistente es casi siempre lo mismo: entender el comportamiento de quien está del otro lado.',
+        'about.p2': 'Mi posgrado en Sociopsicología no fue casualidad. La Sociología, la Antropología y el Psicoanálisis tienen cosas importantes que decir sobre por qué las personas comparten lo que comparten y sobre qué hace que un mensaje realmente llegue. Esa mirada atraviesa todo lo que hago.',
+        'about.p3': 'En 2020 cofundé <em>Não Dá Para Pausar</em>, un pódcast sobre videojuegos para quienes tienen más de 30 años. Más que un pasatiempo, funciona como una etnografía cultural aplicada: en cada conversación investigamos cómo la clase social, la región y la crianza moldean la forma en que cada uno de nosotros interpreta los juegos.',
+        'about.p4': 'Desde 2026 también coordino la gestión de proyectos (PMO) de la comunicación del mandato donde trabajo. Eso me mostró qué le pasa a una estrategia cuando sale de la presentación y se encuentra con plazos, aprobaciones y un equipo. Mi foco, sin embargo, sigue en la planificación: quiero llevar ese repertorio a una agencia, donde el pensamiento estratégico es lo que da forma a las campañas.',
+        'info.degree.lbl': 'Formación de grado',
+        'info.degree.val': 'Licenciatura en Publicidad y Propaganda<br>Universidade Veiga de Almeida',
+        'info.post.lbl': 'Posgrado',
+        'info.post.val': 'Sociopsicología, FESPSP',
+        'info.courses.lbl': 'Cursos destacados',
+        'info.courses.val': 'Antropología de las Redes Sociales, UCL<br>Planificación de Comunicación, Miami Ad School / ESPM',
+        'info.loc.lbl': 'Ubicación',
+        'info.loc.val': 'São Paulo, Brasil · híbrido o presencial',
+        'info.lang.lbl': 'Idiomas',
+        'info.lang.val': 'Portugués (nativo) · Inglés (fluido)<br>Español (básico) · Francés (básico)',
+        'work.label': 'Trabajos',
+        'work.title': 'Lo que me formó',
+        'work.hint': 'Haz clic para expandir',
+        'lbl.context': 'Contexto',
+        'lbl.did': 'Qué hice',
+        'lbl.numbers': 'En números',
+        'c1.period': 'Oct 2020 - Ago 2023 · Senior Content Analyst',
+        'c1.context': 'Operar la presencia oficial de Call of Duty y Call of Duty Mobile para Brasil y LATAM significa lidiar con dos dinámicas simultáneas: la maquinaria de contenido global de Activision y las especificidades culturales de un público latinoamericano con códigos propios. El desafío estaba menos en publicar y más en traducir: no el idioma, sino la relevancia.',
+        'c1.did': 'Fui el principal responsable de la operación de los perfiles de BR y LATAM durante los lanzamientos de Black Ops Cold War (2020), Vanguard (2021), Modern Warfare II y Warzone 2.0 (2022). Analicé datos de engagement para mapear lo que realmente resonaba con el público local, alimentando la estrategia de localización del contenido global. También di soporte al ecosistema de influenciadores brasileños y a la gestión de la relación con los consumidores en redes.',
+        'c1.m1': 'franquicias globales',
+        'c1.m2': 'lanzamientos en 3 años',
+        'c1.m3.num': '+2,5%',
+        'c1.m3': 'de resonancia cultural con el público brasileño',
+        'c2.name': 'Planificación de Social en Agencia',
+        'c2.period': 'Abr 2017 - Ago 2019 · Social Media Planner',
+        'c2.context': 'FCB fue mi primera experiencia como planner dentro de una agencia. Tres clientes con perfiles completamente distintos (un snack, una marca de pescados y una marca de pañales) con una necesidad en común: una estrategia de social que fuera más allá del calendario estacional y generara insights reales para la comunicación.',
+        'c2.did': 'Desarrollé planificación táctica basada en social listening estructurado y monitoreo de la competencia. Los datos que recopilaba no se quedaban en un informe: se convertían en briefs que orientaban ajustes de comunicación. También conduje el proceso completo de investigación, selección y capacitación de la herramienta de social del área, lo que exigió entender las necesidades de los equipos antes de cualquier decisión técnica.',
+        'c3.client': 'Asamblea Legislativa del Estado de São Paulo (Alesp)',
+        'c3.name': 'Comunicación de un mandato, de la estrategia a la entrega',
+        'c3.period': 'Ago 2023 - Actualidad · Estratega de Contenido y Gerente de Proyectos de Comunicación (PMO)',
+        'c3.context': 'La comunicación política tiene dinámicas que la comunicación de marca rara vez enfrenta, como temas sensibles y un escrutinio público constante. En el mandato de la diputada estatal Andréa Werner, empecé construyendo la estrategia y, a partir de 2026, asumí también la gestión de los proyectos de comunicación. Fue la oportunidad de ver de cerca qué le pasa a una planificación cuando se encuentra con plazos, aprobaciones y un equipo real.',
+        'c3.ph1.lbl': 'Estrategia · 2023 a 2026',
+        'c3.ph1': 'Construí desde cero la estrategia de comunicación digital del mandato, con tono de voz, calendario editorial, criterios de pauta y flujo de producción entre el despacho y los canales. La planificación pasó a orientarse por el análisis de engagement y el comportamiento de la audiencia, y el alcance orgánico creció cerca de un 20%.',
+        'c3.ph2.lbl': 'Gestión de proyectos (PMO) · desde 2026',
+        'c3.ph2': 'Estructuré la gestión de proyectos de la comunicación con un flujo Kanban de cinco etapas, un límite de demandas simultáneas y alertas para pautas detenidas, lo que dio previsibilidad a las entregas. Organicé el acervo de video en un banco de contenidos con un panel de indicadores, coordino la agenda de grabación de dos portavoces y la fila de aprobación entre el despacho, el área jurídica y la creación, e instituí una revisión de conformidad antes de cada publicación.',
+        'c3.m1': 'de crecimiento en el alcance orgánico',
+        'c3.m2': 'etapas en el flujo de producción',
+        'c3.m3': 'portavoces coordinadas',
+        'c4.name': 'Tiempo real, eventos y dos clientes a la vez',
+        'c4.period': 'Nov 2014 - Dic 2016 · Social Media',
+        'c4.context': 'Cinemark y SporTV son clientes que viven del momento. Los Óscar, preestrenos, el Brasileirão, Río 2016, CBLoL: el contenido en tiempo real exige pensamiento rápido, repertorio cultural y capacidad de tomar decisiones sin esperar aprobaciones en bucle. Aquí aprendí el peso de la relación directa con el cliente y el valor de tener una visión de planificación incluso ante la improvisación.',
+        'c4.did': 'Trabajé en la interfaz diaria entre cliente y agencia, en la planificación y producción de contenido, en el análisis de la competencia y en la elaboración de informes periódicos. Las coberturas en tiempo real (los Óscar, Comic-Con Experience, el Brasileirão, los Juegos Olímpicos y Paralímpicos Río 2016) exigieron presencia, agilidad editorial y la habilidad de leer el ánimo del público en el momento y transformarlo en publicaciones que funcionaban.',
+        'c5.name': 'La escuela de la consistencia bajo presión',
+        'c5.period': 'Abr 2012 - May 2014 · Analista de Relacionamiento',
+        'c5.context': 'Inicio de carrera con una cuenta de alto volumen y alta exposición. Coca-Cola no deja espacio para la improvisación: cada interacción cuenta, cada crisis necesita una respuesta calibrada y la consistencia del tono tiene que mantenerse incluso bajo presión. Fue la escuela de base que moldeó mi relación con los datos y con el comportamiento del consumidor.',
+        'c5.did': 'Fui responsable del monitoreo y la relación con los usuarios en las redes sociales de las páginas de la marca, incluidas Coca-Cola Zero en Facebook y Coca-Cola en Twitter. Elaboraba informes quincenales con insights extraídos de los datos monitoreados, que alimentaban directamente el trabajo de las agencias de contenido de la marca. Formé parte del equipo de gestión y contención de crisis.',
+        'skills.label': 'Cómo pienso y qué uso',
+        'skills.title': 'Habilidades',
+        'pill.strategic': 'Planificación estratégica',
+        'pill.creative': 'Estrategia creativa',
+        'pill.behavior': 'Análisis de comportamiento digital',
+        'pill.smm': 'Marketing en redes sociales',
+        'pill.metrics': 'Métricas y análisis de datos',
+        'pill.mktstrategy': 'Estrategia de marketing',
+        'pill.pmo': 'Gestión de proyectos (PMO)',
+        'pill.kanban': 'Flujo de producción en Kanban',
+        'pill.gamification': 'Gamificación',
+        'pill.digital': 'Marketing digital',
+        'pill.ads': 'Publicidad',
+        'edu.1': 'Posgrado en Sociopsicología',
+        'edu.2': 'Antropología de las Redes Sociales',
+        'edu.3': 'Pocket: Planificación de Comunicación',
+        'edu.4': 'Gamificación',
+        'edu.6': 'Licenciatura en Publicidad y Propaganda',
+        'rec.label': 'Quienes trabajaron conmigo',
+        'rec.title': 'Lo que dicen',
+        'rec1.quote': '“[Thiago] es capaz de evaluar rápidamente escenarios complejos y conciliar perspectivas diferentes para aportar soluciones e ideas nuevas, que impactan directamente en el trabajo. En las sesiones de brainstorming y planificación esto quedaba especialmente claro en la forma en que lograba sumar ideas aparentemente dispares desde la óptica del resultado esperado de las acciones.”',
+        'rec1.role': 'Vicepresidente (voluntario) · OCTO PCD Diversidade',
+        'rec1.note': 'Traducción libre del original en portugués.',
+        'rec2.quote': '“Thiago fue un miembro clave del equipo durante los años en que trabajé con él, siempre entregando más de lo esperado y siempre con la mentalidad correcta para hacer que las cosas sucedan.”',
+        'rec2.note': 'Traducción libre del original en inglés.',
+        'rec3.quote': '“Desde el apoyo a la atención de la cuenta y la planificación de acciones especiales (como la Batalla de Posts de Star Wars) hasta la concepción de contenidos de nicho, Thiago demostró ser creativo, comprometido y entusiasta, abrazando las demandas más diversas con buen humor y gusto por lo que hace.”',
+        'rec3.note': 'Traducción libre del original en portugués.',
+        'rec4.quote': '“[...] siempre busca perfeccionar sus técnicas para el mercado laboral. [...] Siempre que puede, aporta sugerencias que podrían beneficiar al cliente, acercándolo cada vez más a su público.”',
+        'rec4.role': 'Relación Omnicanal · The Coca-Cola Company',
+        'rec4.note': 'Traducción libre del original en portugués.',
+        'seek.label': 'Lo que busco',
+        'seek.text': 'Quiero trabajar en agencias donde la planificación sea lo que da forma a las campañas, y no una etapa burocrática entre el brief y la creación. Prefiero ambientes donde preguntar “¿por qué?” se valore tanto como el “cómo”.',
+        'seek.t1': 'Supervisor de Planificación',
+        'seek.t2': 'Estratega Sénior de Contenido',
+        'seek.t3': 'Agencias de publicidad',
+        'seek.t4': 'Comunicación con intencionalidad',
+        'seek.t5': 'Cultura estratégica sólida',
+        'contact.label': 'Contacto',
+        'contact.title': '¿Hablamos?',
+        'contact.sub': 'Si tu agencia necesita a alguien que piense la estrategia antes de la creación y la acompañe hasta la entrega, escríbeme.',
+        'contact.phone': '+55 11 94191-8611'
+      }
+    };
 
-      // close all
-      document.querySelectorAll('.case-card.open').forEach(c => {
-        c.classList.remove('open');
-        c.querySelector('.case-body').style.display = 'none';
+    const LANGS = { pt: 'pt-BR', en: 'en', es: 'es' };
+    const OG_LOCALE = { pt: 'pt_BR', en: 'en_US', es: 'es_ES' };
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+
+    // O português vem do próprio HTML: guardamos o texto original de cada elemento
+    const PT = {
+      'meta.title': document.title,
+      'meta.description': metaDesc.getAttribute('content')
+    };
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (!(key in PT)) PT[key] = el.innerHTML;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.dataset.i18nAria;
+      if (!(key in PT)) PT[key] = el.getAttribute('aria-label');
+    });
+
+    function t(lang, key) {
+      if (lang !== 'pt' && I18N[lang] && key in I18N[lang]) return I18N[lang][key];
+      return PT[key];
+    }
+
+    function applyLang(lang) {
+      if (!(lang in LANGS)) lang = 'pt';
+      document.documentElement.lang = LANGS[lang];
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.innerHTML = t(lang, el.dataset.i18n);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        el.setAttribute('aria-label', t(lang, el.dataset.i18nAria));
       });
 
-      if (!isOpen) {
-        card.classList.add('open');
-        body.style.display = 'block';
-      }
+      document.title = t(lang, 'meta.title');
+      metaDesc.setAttribute('content', t(lang, 'meta.description'));
+      ogTitle.setAttribute('content', t(lang, 'meta.title'));
+      ogDesc.setAttribute('content', t(lang, 'meta.description'));
+      ogLocale.setAttribute('content', OG_LOCALE[lang]);
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+      });
     }
+
+    function setLang(lang) {
+      applyLang(lang);
+      try { localStorage.setItem('portfolio-lang', lang); } catch (e) {}
+      try {
+        const url = new URL(window.location.href);
+        if (lang === 'pt') url.searchParams.delete('lang');
+        else url.searchParams.set('lang', lang);
+        history.replaceState(null, '', url);
+      } catch (e) {}
+    }
+
+    // Idioma inicial: link com ?lang= > última escolha do visitante > português
+    (function initLang() {
+      let lang = 'pt';
+      try {
+        const fromUrl = new URLSearchParams(window.location.search).get('lang');
+        let saved = null;
+        try { saved = localStorage.getItem('portfolio-lang'); } catch (e) {}
+        if (fromUrl && fromUrl in LANGS) lang = fromUrl;
+        else if (saved && saved in LANGS) lang = saved;
+      } catch (e) {}
+      if (lang !== 'pt') applyLang(lang);
+    })();
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.lang));
+    });
+
+    // Accordion
+    document.querySelectorAll('.case-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const card = trigger.closest('.case-card');
+        const isOpen = card.classList.contains('open');
+
+        document.querySelectorAll('.case-card.open').forEach(c => {
+          c.classList.remove('open');
+          c.querySelector('.case-trigger').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          card.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
 
     // Scroll reveal
     const observer = new IntersectionObserver(entries => {
